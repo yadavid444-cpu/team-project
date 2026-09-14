@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --primary: #1f6feb;
+        --primary-dark: #114eb8;
+        --text: #1c2430;
+        --muted: #5c6775;
+        --line: #e6ebf2;
+        --accent: #eaf2ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin: 0 0 16px;
+        line-height: 1.1;
+      }
+
+      .hero-text p {
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 620px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 15px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.25s ease;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: #edf3ff;
+        color: var(--primary-dark);
+      }
+
+      .hero-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 16px 36px rgba(31, 111, 235, 0.08);
+      }
+
+      .hero-card .badge {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--primary-dark);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .hero-card h3 {
+        font-size: 1.8rem;
+        margin: 18px 0 16px;
+      }
+
+      .hero-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .hero-card li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 14px 0;
+        color: var(--muted);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin: 30px 0 60px;
+      }
+
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        text-align: center;
+        padding: 28px 18px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .team {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .member {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 10px 24px rgba(17, 78, 184, 0.04);
+      }
+
+      .avatar {
+        width: 84px;
+        height: 84px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #dfeeff, #b3d0ff);
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--primary-dark);
+      }
+
+      .member h3 {
+        margin: 0 0 8px;
+      }
+
+      .role {
+        color: var(--primary);
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .member p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .hero,
+        .team,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>We build ideas that move people.</h1>
+          <p>
+            Our company blends creativity, technology, and strategy to create
+            products and experiences that help brands grow and communities thrive.
+            We believe in thoughtful design, clear communication, and measurable results.
+          </p>
+          <div class="cta-row">
+            <a href="#team" class="btn btn-primary">Meet the Team</a>
+            <a href="#mission" class="btn btn-secondary">Our Mission</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="badge">Since 2018</span>
+          <h3>Creative. Reliable. Human.</h3>
+          <ul>
+            <li><span class="dot"></span> Design-led digital solutions</li>
+            <li><span class="dot"></span> Collaboration with global teams</li>
+            <li><span class="dot"></span> Clear strategy and measurable impact</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="stats" id="mission">
+        <div class="stat">
+          <strong>120+</strong>
+          <span>Projects launched</span>
+        </div>
+        <div class="stat">
+          <strong>18</strong>
+          <span>Industry partners</span>
+        </div>
+        <div class="stat">
+          <strong>96%</strong>
+          <span>Client satisfaction</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Our Story</h2>
+          <p>
+            We started with a simple idea: businesses need more than just services—they need
+            a partner who understands their goals, audience, and future vision. We work with
+            founders, teams, and brands to turn bold ideas into practical, lasting solutions.
+          </p>
+        </div>
+      </section>
+
+      <section id="team" style="margin-top: 60px;">
+        <div class="section-title">
+          <h2>Meet the Team</h2>
+        </div>
+
+        <div class="team">
+          <div class="member">
+            <div class="avatar">AS</div>
+            <h3>Alicia Stone</h3>
+            <div class="role">Founder & CEO</div>
+            <p>
+              Alicia leads the company vision and helps teams turn strategic goals into
+              meaningful experiences.
+            </p>
+          </div>
+
+          <div class="member">
+            <div class="avatar">MN</div>
+            <h3>Marcus Nunez</h3>
+            <div class="role">Creative Director</div>
+            <p>
+              Marcus shapes the visual language of every project, balancing intuition with
+              execution and clarity.
+            </p>
+          </div>
+
+          <div class="member">
+            <div class="avatar">JR</div>
+            <h3>Jenna Ross</h3>
+            <div class="role">Operations Lead</div>
+            <p>
+              Jenna keeps projects moving smoothly, ensuring teams stay aligned, efficient,
+              and focused on real outcomes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
